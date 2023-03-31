@@ -1,7 +1,21 @@
-public struct Request
+public class Request
 {
-    public string Name;
-    public string Body;
-    public System.Action OnAccept;
-    public System.Action OnDecline;
+    public string Name { get; private set; }
+    public string Body { get; private set; }
+    public System.Action OnAccept { get; private set; }
+    public System.Action OnDecline { get; private set; }
+
+    public Request()
+    {
+        Name = "Request " + UnityEngine.Random.Range(0, 100);
+        Body = "Body of " + Name;
+        OnAccept = () =>
+        {
+            UnityEngine.Debug.Log(Name + " accepted.");
+        };
+        OnDecline = () =>
+        {
+            UnityEngine.Debug.Log(Name + " declined.");
+        };
+    }
 }
