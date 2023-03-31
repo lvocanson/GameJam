@@ -2,7 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class Save
+public static class Save
 {
     public static void SaveFile(string fileName)
     {
@@ -25,7 +25,7 @@ public class Save
         if (File.Exists(destination)) file = File.OpenRead(destination);
         else
         {
-            Debug.LogError("File not found");
+            Debug.LogError("Can't find a file at: " + destination);
             return null;
         }
 

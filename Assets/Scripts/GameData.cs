@@ -1,6 +1,5 @@
 public enum SocialClass
 {
-    King,
     GreatLord,
     Lord,
     Knight,
@@ -26,6 +25,7 @@ public class GameData
 
     public int treasury; 
     public int landOwned; // in acres
+    public int[] population = new int[(int)SocialClass.Length];
     public int[] friendshipScores = new int[(int)SocialClass.Length];
     public int[] diplomacyScores = new int[(int)Countries.Length];
 
