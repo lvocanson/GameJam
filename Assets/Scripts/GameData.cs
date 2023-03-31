@@ -1,15 +1,12 @@
 public enum SocialClass
 {
-    GreatLord,
-    Lord,
-    Knight,
-    Squire,
+    Overlord,
+    Vassal,
     Peasant,
-    Slave,
     Length // Keep this at the end
 }
 
-public enum Countries
+public enum Country
 {
     England,
     France,
@@ -21,22 +18,27 @@ public enum Countries
 public class GameData
 {
     public string name;
+    public Country country;
     public float timePlayed;
 
     public int treasury; 
     public int landOwned; // in acres
-    public int[] population = new int[(int)SocialClass.Length];
-    public int[] friendshipScores = new int[(int)SocialClass.Length];
-    public int[] diplomacyScores = new int[(int)Countries.Length];
+    public int population;
+    public int[] friendshipScores;
+    public int[] diplomacyScores;
 
     public GameData()
     {
         name = "Player";
+        country = (Country)UnityEngine.Random.Range(0, (int)Country.Length);
         timePlayed = 0f;
 
         treasury = 0;
         landOwned = 0;
+        population = 0;
+        friendshipScores = new int[(int)SocialClass.Length];
         System.Array.Fill(friendshipScores, 0);
+        diplomacyScores = new int[(int)Country.Length];
         System.Array.Fill(diplomacyScores, 0);
     }
 }
