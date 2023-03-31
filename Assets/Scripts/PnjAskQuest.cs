@@ -1,22 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PnjAskQuest : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool _questStarted = false;
     private float _speedMove = 1f;
-
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime,0,0);
-        //2.51
-        
+        if (transform.position.x >= 2.51)
+        {
+            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, 0, 0);
+
+        }
+        else
+        {
+            _questStarted= true;
+        }
+
+
     }
+
+
+
 }
