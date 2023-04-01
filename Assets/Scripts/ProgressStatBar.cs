@@ -30,14 +30,36 @@ public class ProgressStatBar : MonoBehaviour
         fillImage = fillBar.GetComponent<Image>();
     }
 
-    public void UpdateProgression(int friendship)
+    public void UpdateProgression(int value)
     {
-        progression = friendship % 50;
-        if (progression == 0)
+        int score = value;
+        if (score > 0)
+            progression = score % 50;
+        else
+            progression = 0;
+
+        if (progression <= 0)
             backgroundImage.color = Color.black;
-        else 
-            backgroundImage.color = progressionColors[progression-1];
+        else
+            backgroundImage.color = progressionColors[progression - 1];
 
         fillImage.color = progressionColors[progression];
+        UpdateBar(score);
+    }
+
+    private void UpdateBar(int value)
+    {
+        int length = value;
+        if (length > 50)
+            length -= value - (progression * 50);
+        if (length <= 0)
+        {
+            fillBar.GetComponent<RectTransform>().pivot = new Vector2(1, 0.5f);
+            if (length < -50)
+                length += 50;
+        }
+
+        fillBar.GetComponent<RectTransform>().sizeDelta = new Vector2(length, fillBar.GetComponent<RectTransform>().sizeDelta.y);
+
     }
 }

@@ -8,18 +8,6 @@ public class ButtonFunctions : MonoBehaviour
         Windowed
     }
 
-    private GameObject gameManager;
-
-    private void Awake()
-    {
-        gameManager = GameObject.Find("GameManager");
-
-        if (gameManager == null)
-        {
-            Debug.LogError("GameManager not found!");
-        }
-    }
-
     public void QuitGame()
     {
         GameManager.Instance.QuitGame();
@@ -59,12 +47,5 @@ public class ButtonFunctions : MonoBehaviour
     public void ChangeVolume(float value)
     {
         GameManager.Instance.GetComponent<AudioManager>().ChangeVolume(value);
-    }
-
- 
-
-    public void LoadFile(string fileName)
-    {
-        ObjectSaver.Load(fileName);
     }
 }
