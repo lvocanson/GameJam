@@ -17,10 +17,7 @@ public class Request
     public Consequence Accept { get; private set; } = null;
     public Consequence Decline { get; private set; } = null;
 
-    public Request()
-    {
-        Randomize();
-    }
+ 
 
     public void AcceptConsequences()
     {
