@@ -11,14 +11,16 @@ public class PnjAskQuest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (transform.position.x >= 2.51)
         {
-            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, 0, 0);
+            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, 0, -1);
 
         }
         else
         {
-            _questStarted= true;
+               Transform child =  transform.GetChild(0);
+            child.gameObject.SetActive(true);
         }
 
 
