@@ -20,7 +20,7 @@ public class GameData
     public int DaysPlayed { get; set; } = 0;
     public int RequestsAccepted { get; set; } = 0;
     public int RequestsDeclined { get; set; } = 0;
-
+    public int TimeDay { get; set; } = 0;
     // Statistics
     public int Treasury { get; set; } = 100;
     public float IncomeMultiplier { get; set; } = 1;
