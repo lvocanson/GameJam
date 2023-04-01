@@ -5,6 +5,8 @@ using System;
 
 public class PnjAskQuest : MonoBehaviour
 {
+    [SerializeField] GameObject child;
+
     public bool _questStarted = false;
     private float _speedMove = 1f;
 
@@ -19,8 +21,7 @@ public class PnjAskQuest : MonoBehaviour
         }
         else
         {
-               Transform child =  transform.GetChild(0);
-            child.gameObject.SetActive(true);
+            child.SetActive(true);
         }
 
 
