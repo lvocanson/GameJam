@@ -1,17 +1,21 @@
+public enum RequestType
+{
+    Money,
+    Land,
+    Alliance,
+    War,
+    Tribute,
+    Length // Keep this at the end
+}
+
 public class Request
 {
-    public string Name { get; private set; }
-    public string Body { get; private set; }
-    public System.Action OnAccept { get; private set; }
-    public System.Action OnDecline { get; private set; }
-
-    public Request()
-    {
-        Name = null;
-        Body = null;
-        OnAccept = null;
-        OnDecline = null;
-    }
+    public RequestType Type { get; private set; } = 0;
+    public SocialClass Requester { get; private set; } = 0;
+    public string Name { get; private set; } = string.Empty;
+    public string Body { get; private set; } = string.Empty;
+    public System.Action OnAccept { get; private set; } = null;
+    public System.Action OnDecline { get; private set; } = null;
 
     public void Randomize()
     {
