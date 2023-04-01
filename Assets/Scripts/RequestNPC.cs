@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class RequestNPC : MonoBehaviour
 {
-    Request quest = new Request();
+    Request quest = new();
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,4 @@ public class RequestNPC : MonoBehaviour
     {
         GetComponent<TextMeshPro>().text = quest.Body;
     }
-
-
 }
