@@ -7,6 +7,14 @@ public class Request
 
     public Request()
     {
+        Name = null;
+        Body = null;
+        OnAccept = null;
+        OnDecline = null;
+    }
+
+    public void Randomize()
+    {
         Name = "Request " + UnityEngine.Random.Range(0, 100);
         Body = "Body of " + Name;
         OnAccept = () =>
