@@ -11,8 +11,9 @@ public class PnjAskQuest : MonoBehaviour
     [SerializeField] GameObject vassal;
     [SerializeField] GameObject overLord;
 
-    public Request quest;
+    public Request request;
     public string nameNPC;
+    private int turn = 0;
 
     private bool _backtrack = false;
     private bool _questStarted = false;
@@ -22,14 +23,14 @@ public class PnjAskQuest : MonoBehaviour
 
     private void Start()
     {
-        quest = DataBase.GetRandomRequest();
-        nameNPC = Names.GetRandomName(quest.Importance);
+        request = DataBase.GetRandomRequest();
+        nameNPC = Names.GetRandomName(request.Importance);
 
     }
     // Update is called once per frame
     void Update()
     {
-        socialClass = quest.Importance;
+        socialClass = request.Importance;
         switch (socialClass)
         {
             case SocialClass.Overlord:
@@ -63,7 +64,12 @@ public class PnjAskQuest : MonoBehaviour
             }
             else
             {
-
+                turn++;
+                if (turn == 2)
+                {
+                    turn= 0;
+                    GameManager.Instance.Data.TimeDay++;
+                }
                 child.SetActive(true);
             }
         }
@@ -86,8 +92,8 @@ public class PnjAskQuest : MonoBehaviour
                 _backtrack = false;
                 _questStarted = false;
                 _questFinished = false;
-                nameNPC = Names.GetRandomName(quest.Importance);
-                quest = DataBase.GetRandomRequest();
+                nameNPC = Names.GetRandomName(request.Importance);
+                request = DataBase.GetRandomRequest();
             }
         }
 

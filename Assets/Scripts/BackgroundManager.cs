@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    GameObject gameManager;
     private void Update()
     {
 
+        transform.GetChild(GameManager.Instance.Data.TimeDay).gameObject.SetActive(true);
+        
        
     }
 
