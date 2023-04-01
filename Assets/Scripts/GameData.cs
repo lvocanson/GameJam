@@ -4,7 +4,7 @@ using UnityEngine;
 public enum SocialClass
 {
     Overlord,
-    Vassal,
+    Lord,
     Peasant,
     Length // Keep this at the end
 }
