@@ -1,3 +1,4 @@
+
 public class Request
 {
     public enum Category
@@ -23,6 +24,7 @@ public class Request
     public void AcceptConsequences()
     {
         OnAccept?.Invoke();
+        UnityEngine.Debug.Log(GameManager.Instance);
         GameManager.Instance.Data.requestsAccepted++;
     }
 
