@@ -3,14 +3,11 @@ public class Request
 {
     public enum Category
     {
-        LandPurchase,
-        FiefGiving,
-        MilitaryAid,
-        ResearchInvestments,
-        ThiefExecution,
-        FestivalAuthorisation,
-        SocialReform,
-        RefugeeAid,
+        Land,
+        Military,
+        Clerical,
+        PublicOrder,
+        Social,
         Length // Keep this last
     }
 

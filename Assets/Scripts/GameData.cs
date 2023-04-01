@@ -24,7 +24,7 @@ public class GameData
 
     // Statistics
     public int Treasury { get; set; } = 100;
-    public float TaxesMultiplier { get; set; } = 1;
+    public float IncomeMultiplier { get; set; } = 1;
     public int LandOwned { get; set; } = 10;
     public int Population { get; set; } = 100;
     private int _crimeRate = 1; // Always between 0 and 100
@@ -36,7 +36,7 @@ public class GameData
     {
         get
         {
-            return (int)(Population * TaxesMultiplier - LandOwned) / 10;
+            return (int)(Population * IncomeMultiplier - LandOwned) / 10;
         }
     }
 

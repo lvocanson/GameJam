@@ -30,14 +30,11 @@ public static class DataBase
     /// </summary>
     public static Request[] GetRequests()
     {
-        return LandPurchaseRequests
-            .Concat(FiefGivingRequests)
-            .Concat(MilitaryAidRequests)
+        return LandRequests
+            .Concat(MilitaryRequests)
             .Concat(ClericalRequest)
-            .Concat(ThiefExecutionRequests)
-            .Concat(FestivalAuthorisationRequests)
-            .Concat(SocialReformRequests)
-            .Concat(RefugeeAidRequests)
+            .Concat(PublicOrderRequests)
+            .Concat(SocialRequests)
             .ToArray();
     }
 
@@ -48,27 +45,21 @@ public static class DataBase
     {
         switch (category)
         {
-            case Request.Category.LandPurchase:
-                return LandPurchaseRequests;
-            case Request.Category.FiefGiving:
-                return FiefGivingRequests;
-            case Request.Category.MilitaryAid:
-                return MilitaryAidRequests;
-            case Request.Category.ResearchInvestments:
+            case Request.Category.Land:
+                return LandRequests;
+            case Request.Category.Military:
+                return MilitaryRequests;
+            case Request.Category.Clerical:
                 return ClericalRequest;
-            case Request.Category.ThiefExecution:
-                return ThiefExecutionRequests;
-            case Request.Category.FestivalAuthorisation:
-                return FestivalAuthorisationRequests;
-            case Request.Category.SocialReform:
-                return SocialReformRequests;
-            case Request.Category.RefugeeAid:
-                return RefugeeAidRequests;
+            case Request.Category.PublicOrder:
+                return PublicOrderRequests;
+            case Request.Category.Social:
+                return SocialRequests;
             default: return null;
         }
     }
 
-    public static Request[] LandPurchaseRequests = new Request[]
+    public static Request[] LandRequests = new Request[]
     {
         new Request(
             "Land Purchase",
@@ -81,11 +72,7 @@ public static class DataBase
             },
             () => {
                 Data.FriendshipScores[(int)SocialClass.Overlord] -= 10;
-            })
-    };
-
-    public static Request[] FiefGivingRequests = new Request[]
-    {
+            }),
         new Request(
             "Fief Giving",
             "Please give me some lands!",
@@ -100,10 +87,24 @@ public static class DataBase
             {
                 Data.FriendshipScores[(int)SocialClass.Lord] -= 10;
                 Data.FriendshipScores[(int)SocialClass.Peasant] += Range(0, 11);
+            }),
+     new Request(
+            "New Market",
+            "A merchant has requested permission to build a new market. Allow?",
+            SocialClass.Lord,
+            () =>
+            {
+                Data.IncomeMultiplier += 0.01f; // Trade tax
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+            },
+            () =>
+            {
+                Data.Population--;
             })
+
     };
 
-    public static Request[] MilitaryAidRequests = new Request[]
+    public static Request[] MilitaryRequests = new Request[]
     {
         new Request(
             "Please help us!",
@@ -117,6 +118,20 @@ public static class DataBase
             () =>
             {
                 Data.FriendshipScores[(int)SocialClass.Peasant] -= 10;
+            }),
+        new Request(
+            "Increase Guard Patrols",
+            "Crime rates are rising. Should we increase guard patrols?",
+            SocialClass.Lord,
+            () =>
+            {
+                Data.CrimeRate--;
+                Data.IncomeMultiplier -= 0.1f; // Cost of patrol
+            },
+            () =>
+            {
+                Data.CrimeRate++;
+                Data.FriendshipScores[(int)SocialClass.Peasant] -= 5;
             })
     };
 
@@ -146,10 +161,24 @@ public static class DataBase
                     Data.FriendshipScores[(int)SocialClass.Lord] -= Range(5, 16);
                     Data.FriendshipScores[(int)SocialClass.Peasant] -= Range(0, 11);
                 }
+            }),
+        new Request(
+            "Construct a new church",
+            "We have requested funds to build a new church. Can you provide support?",
+            SocialClass.Clergy,
+            () =>
+            {
+                Data.Treasury -= 25;
+                Data.FriendshipScores[(int)SocialClass.Clergy] += 10;
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+            },
+            () =>
+            {
+                Data.FriendshipScores[(int)SocialClass.Clergy] += 10;
             })
     };
 
-    public static Request[] ThiefExecutionRequests = new Request[]
+    public static Request[] PublicOrderRequests = new Request[]
     {
         new Request(
             "Final decision",
@@ -167,11 +196,7 @@ public static class DataBase
                 Data.CrimeRate += 3;
                 Data.FriendshipScores[(int)SocialClass.Lord] -= 5;
                 Data.FriendshipScores[(int)SocialClass.Peasant] += Range(-5, 6);
-            })
-    };
-
-    public static Request[] FestivalAuthorisationRequests = new Request[]
-    {
+            }),
         new Request(
             "Carnival Authorisation",
             "Sir, Can we organaise a carnival?",
@@ -187,7 +212,7 @@ public static class DataBase
             })
     };
 
-    public static Request[] SocialReformRequests = new Request[]
+    public static Request[] SocialRequests = new Request[]
     {
         new Request(
             "Increase Taxes",
@@ -195,18 +220,27 @@ public static class DataBase
             SocialClass.Overlord,
             () =>
             {
-                Data.TaxesMultiplier += 0.1f;
+                Data.IncomeMultiplier += 0.5f; // Tax increase
                 Data.FriendshipScores[(int)SocialClass.Overlord] += 10;
                 Data.FriendshipScores[(int)SocialClass.Lord] += Range(-5, 6);
                 Data.FriendshipScores[(int)SocialClass.Peasant] -= Range(0, 11);
             },
             () =>
             {
-            })
-    };
-
-    public static Request[] RefugeeAidRequests = new Request[]
-    {
+            }),
+        new Request(
+            "Tax Break for Farmers",
+            "Farmers are struggling due to a harsh winter. Grant them a tax break?",
+            SocialClass.Overlord,
+            () =>
+            {
+                Data.IncomeMultiplier -= 0.05f;
+                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(5, 16);
+                Data.CrimeRate--;
+            },
+            () =>
+            {
+            }),
         new Request(
             "Help Refugees",
             "Will you provide aid to the refugees who have fled from the war-torn neighboring kingdom?",
@@ -219,7 +253,22 @@ public static class DataBase
             },
             () =>
             {
-                Data.CrimeRate += 3;
+                Data.CrimeRate++;
             })
     };
+
+    /* -- NEW REQUEST TEMPLATE --,
+     new Request(
+            "NAME",
+            "SUMMARY & CLOSED QUESTION",
+            ASKER,
+            () =>
+            {
+                // On Accept...
+            },
+            () =>
+            {
+                // On Decline...
+            })
+    */
 }
