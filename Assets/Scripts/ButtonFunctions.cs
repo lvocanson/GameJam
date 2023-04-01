@@ -46,6 +46,11 @@ public class ButtonFunctions : MonoBehaviour
 
     public void ChangeVolume(float value)
     {
-        GameManager.Instance.GetComponent<AudioManager>().ChangeVolume(value);
+        GameManager.Instance.GetComponent<AudioManager>().Volume = value;
+    }
+
+    public void LoadSave(string fileName)
+    {
+        GameManager.Instance.LoadSave(fileName);
     }
 }

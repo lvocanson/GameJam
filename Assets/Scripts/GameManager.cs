@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        this.AddComponent<AudioManager>();
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
@@ -36,5 +39,10 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadSave(string fileName)
+    {
+        Data = ObjectSaver.Load<GameData>(fileName);
     }
 }
