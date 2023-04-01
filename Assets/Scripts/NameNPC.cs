@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class RequestNPC : MonoBehaviour
+public class NameNPC : MonoBehaviour
 {
     //[SerializeField] Request quest;
     [SerializeField] GameObject quest;
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<PnjAskQuest>().quest.Body;
+        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<PnjAskQuest>().nameNPC;
 
     }
 }

@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameObject gameManager;
     private void Update()
     {
-                
+
+       
     }
 
 

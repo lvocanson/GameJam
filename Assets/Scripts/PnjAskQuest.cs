@@ -12,9 +12,10 @@ public class PnjAskQuest : MonoBehaviour
     [SerializeField] GameObject overLord;
 
     public Request quest;
+    public string nameNPC;
 
-    public bool _backtrack = false;
-    public bool _questStarted = false;
+    private bool _backtrack = false;
+    private bool _questStarted = false;
     public bool _questFinished = false;
     private float _speedMove = 10f;
     SocialClass socialClass;
@@ -22,6 +23,8 @@ public class PnjAskQuest : MonoBehaviour
     private void Start()
     {
         quest = DataBase.GetRandomRequest();
+        nameNPC = Names.GetRandomName(quest.Importance);
+
     }
     // Update is called once per frame
     void Update()
@@ -60,6 +63,7 @@ public class PnjAskQuest : MonoBehaviour
             }
             else
             {
+
                 child.SetActive(true);
             }
         }
@@ -79,9 +83,10 @@ public class PnjAskQuest : MonoBehaviour
             else
             {
                 transform.Rotate(0, 180, 0);
-                _backtrack= false;
+                _backtrack = false;
                 _questStarted = false;
                 _questFinished = false;
+                nameNPC = Names.GetRandomName(quest.Importance);
                 quest = DataBase.GetRandomRequest();
             }
         }
