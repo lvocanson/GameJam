@@ -12,17 +12,32 @@ public enum SocialClass
 [System.Serializable]
 public class GameData
 {
-    public string Name { get; set; } = "Player";
-    public uint DaysPlayed { get; set; } = 0;
-    public uint RequestsAccepted { get; set; } = 0;
-    public uint RequestsDeclined { get; set; } = 0;
+    // Consts
+    public const int NumberOfRequestsDaily = 8;
 
-    public uint Treasury { get; set; } = 100;
-    public uint LandOwned { get; set; } = 10; // in acres
-    public uint Population { get; set; } = 100;
-    private uint _crimeRate = 1; // Always between 0 and 100
-    public uint CrimeRate { get { return _crimeRate; } set { Min(Max(0, value), 100); } }
+    // Game Data
+    public string Name { get; set; } = "Player";
+    public int DaysPlayed { get; set; } = 0;
+    public int RequestsAccepted { get; set; } = 0;
+    public int RequestsDeclined { get; set; } = 0;
+
+    // Statistics
+    public int Treasury { get; set; } = 100;
+    public float TaxesMultiplier { get; set; } = 1;
+    public int LandOwned { get; set; } = 10;
+    public int Population { get; set; } = 100;
+    private int _crimeRate = 1; // Always between 0 and 100
+    public int CrimeRate { get { return _crimeRate; } set { _crimeRate = Min(Max(0, value), 100); } }
     public int[] FriendshipScores { get; set; } = new int[(int)SocialClass.Length]; // init to 0
+
+    // Auto properties
+    public int DailyIncome
+    {
+        get
+        {
+            return (int)(Population * TaxesMultiplier - LandOwned) / 10;
+        }
+    }
 
     public void Save(string filename)
     {
