@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UIElements;
 
 public class PnjAskQuest : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public class PnjAskQuest : MonoBehaviour
 
     public Request quest = new();
 
-
+    public bool _backtrack = false;
     public bool _questStarted = false;
+    public bool _questFinished = false;
     private float _speedMove = 1f;
     SocialClass socialClass;
-     
+
     private void Start()
     {
         quest.Randomize();
@@ -48,14 +50,41 @@ public class PnjAskQuest : MonoBehaviour
             default:
                 break;
         }
-        if (transform.position.x >= 2.51)
+        if (!_questFinished)
         {
-            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, -2.73f, -1);
 
+
+            if (transform.position.x >= 2.51 && _questFinished == false)
+            {
+                transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, -2.73f, -1);
+
+            }
+            else
+            {
+                child.SetActive(true);
+            }
         }
-        else
+        if (_questFinished)
         {
-            child.SetActive(true);
+            if (!_backtrack)
+            {
+                child.SetActive(false);
+                _backtrack = true;
+                transform.Rotate(0, 180, 0);
+            }
+            if (transform.position.x <= 11.5)
+            {
+                transform.position = new Vector3(transform.position.x + _speedMove * Time.deltaTime, -2.73f, -1);
+
+            }
+            else
+            {
+                transform.Rotate(0, 180, 0);
+                _backtrack= false;
+                _questStarted = false;
+                _questFinished = false;
+                quest.Randomize();
+            }
         }
 
 
