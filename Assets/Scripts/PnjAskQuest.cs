@@ -11,7 +11,7 @@ public class PnjAskQuest : MonoBehaviour
     [SerializeField] GameObject vassal;
     [SerializeField] GameObject overLord;
 
-    public Request quest = new();
+    public Request quest;
 
     public bool _backtrack = false;
     public bool _questStarted = false;
@@ -21,8 +21,7 @@ public class PnjAskQuest : MonoBehaviour
 
     private void Start()
     {
-        quest.Randomize();
-
+        quest = DataBase.GetRandomRequest();
     }
     // Update is called once per frame
     void Update()

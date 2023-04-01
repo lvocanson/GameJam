@@ -1,5 +1,8 @@
+using static UnityEngine.Mathf;
+
 public enum SocialClass
 {
+    Clergy,
     Overlord,
     Lord,
     Peasant,
@@ -9,16 +12,17 @@ public enum SocialClass
 [System.Serializable]
 public class GameData
 {
-    public string name = "Player";
-    public uint daysPlayed = 0;
-    public uint requestsAccepted = 0;
-    public uint requestsDeclined = 0;
+    public string Name { get; set; } = "Player";
+    public uint DaysPlayed { get; set; } = 0;
+    public uint RequestsAccepted { get; set; } = 0;
+    public uint RequestsDeclined { get; set; } = 0;
 
-    public uint treasury = 100;
-    public uint landOwned = 10; // in acres
-    public uint population = 100;
-    public float crimeRate = 1;
-    public int[] friendshipScores;
+    public uint Treasury { get; set; } = 100;
+    public uint LandOwned { get; set; } = 10; // in acres
+    public uint Population { get; set; } = 100;
+    private uint _crimeRate = 1; // Always between 0 and 100
+    public uint CrimeRate { get { return _crimeRate; } set { Min(Max(0, value), 100); } }
+    public int[] FriendshipScores { get; set; } = new int[(int)SocialClass.Length]; // init to 0
 
     public void Save(string filename)
     {
