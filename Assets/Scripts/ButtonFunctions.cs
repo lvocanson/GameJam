@@ -61,10 +61,7 @@ public class ButtonFunctions : MonoBehaviour
         GameManager.Instance.GetComponent<AudioManager>().ChangeVolume(value);
     }
 
-    public void SaveFile(string fileName)
-    {
-        ObjectSaver.SaveFile(fileName);
-    }
+ 
 
     public void LoadFile(string fileName)
     {

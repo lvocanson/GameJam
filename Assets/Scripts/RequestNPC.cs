@@ -7,19 +7,27 @@ using UnityEngine.UIElements;
 
 public class RequestNPC : MonoBehaviour
 {
-    Request quest = new();
+    //[SerializeField] Request quest;
+
+
+    [SerializeField] GameObject quest;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-        quest.Randomize();
-        quest.Requester();
+        //quest = _quest;
+
+   
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = quest.Body;
-        
+        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<PnjAskQuest>().quest.Body;
+
     }
 }
