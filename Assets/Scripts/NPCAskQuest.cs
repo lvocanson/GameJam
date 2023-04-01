@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using UnityEngine.UIElements;
 
-public class PnjAskQuest : MonoBehaviour
+public class NPCAskQuest : MonoBehaviour
 {
     [SerializeField] GameObject child;
     [SerializeField] GameObject peasant;
