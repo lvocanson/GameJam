@@ -22,14 +22,7 @@ public class ButtonFunctions : MonoBehaviour
 
     public void QuitGame()
     {
-        var gm = gameManager.GetComponent<GameManager>();
-        gm.QuitGame();
-    }
-
-    public void SaveGame()
-    {
-        /*var gm = gameManager.GetComponent<GameManager>();
-        gm.SaveGame();*/
+        GameManager.Instance.QuitGame();
     }
 
     public void BackButton(GameObject canceled)
@@ -60,13 +53,21 @@ public class ButtonFunctions : MonoBehaviour
 
     public void LoadScene(string scene)
     {
-        var gm = gameManager.GetComponent<GameManager>();
-        gm.LoadScene(scene);
+        GameManager.Instance.LoadScene(scene);
     }
 
     public void ChangeVolume(float value)
     {
-        var audioManager = gameManager.GetComponent<AudioManager>();
-        audioManager.ChangeVolume(value);
+        GameManager.Instance.GetComponent<AudioManager>().ChangeVolume(value);
+    }
+
+    public void SaveFile(string fileName)
+    {
+        Save.SaveFile(fileName);
+    }
+
+    public void LoadFile(string fileName)
+    {
+        Save.LoadFile(fileName);
     }
 }
