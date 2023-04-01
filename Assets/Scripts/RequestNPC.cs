@@ -8,16 +8,18 @@ using UnityEngine.UIElements;
 public class RequestNPC : MonoBehaviour
 {
     Request quest = new();
+
     // Start is called before the first frame update
     void Start()
     {
         quest.Randomize();
+        quest.Requester();
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshPro>().text = quest.Body;
+        GetComponent<TextMeshProUGUI>().text = quest.Body;
         
     }
 }
