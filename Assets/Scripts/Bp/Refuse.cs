@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Refuse : MonoBehaviour
@@ -8,7 +6,7 @@ public class Refuse : MonoBehaviour
 
     public void OnClick()
     {
-        quest.GetComponent<PnjAskQuest>().request.AcceptConsequences();
-        quest.GetComponent<PnjAskQuest>()._questFinished = true;
+        quest.GetComponent<NPCAskQuest>().request.AcceptConsequences();
+        quest.GetComponent<NPCAskQuest>()._questFinished = true;
     }
 }
