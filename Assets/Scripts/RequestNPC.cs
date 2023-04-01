@@ -12,7 +12,7 @@ public class RequestNPC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<PnjAskQuest>().quest.Body;
+        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<PnjAskQuest>().request.Body;
 
     }
 }

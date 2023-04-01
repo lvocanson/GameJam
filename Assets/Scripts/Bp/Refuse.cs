@@ -8,7 +8,7 @@ public class Refuse : MonoBehaviour
 
     public void OnClick()
     {
-        quest.GetComponent<PnjAskQuest>().quest.AcceptConsequences();
+        quest.GetComponent<PnjAskQuest>().request.AcceptConsequences();
         quest.GetComponent<PnjAskQuest>()._questFinished = true;
     }
 }
