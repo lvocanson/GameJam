@@ -1,3 +1,14 @@
+public struct IntFork
+{
+    public IntFork(int min, int max)
+    {
+        Min = min;
+        Max = max;
+    }
+    public int Min,
+               Max;
+}
+
 public enum SocialClass
 {
     Overlord,
