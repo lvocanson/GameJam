@@ -16,7 +16,7 @@ public class PnjAskQuest : MonoBehaviour
     public bool _backtrack = false;
     public bool _questStarted = false;
     public bool _questFinished = false;
-    private float _speedMove = 1f;
+    private float _speedMove = 10f;
     SocialClass socialClass;
 
     private void Start()
@@ -82,7 +82,7 @@ public class PnjAskQuest : MonoBehaviour
                 _backtrack= false;
                 _questStarted = false;
                 _questFinished = false;
-                quest.Randomize();
+                quest = DataBase.GetRandomRequest();
             }
         }
 
