@@ -17,7 +17,7 @@ public static class ObjectSaver
         file.Close();
     }
 
-    public static object Load(string fileName)
+    public static T Load<T>(string fileName)
     {
         string destination = Application.persistentDataPath + "/" + fileName;
         FileStream file;
@@ -26,11 +26,11 @@ public static class ObjectSaver
         else
         {
             Debug.LogError("Can't find a file at: " + destination);
-            return null;
+            return default;
         }
 
         BinaryFormatter bf = new BinaryFormatter();
-        object data = bf.Deserialize(file);
+        T data = (T)bf.Deserialize(file);
         file.Close();
         return data;
     }

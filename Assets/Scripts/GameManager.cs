@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        Data = (GameData)ObjectSaver.Load("save1.dat");
+        Data = ObjectSaver.Load<GameData>("save1.dat");
         if (Data == null)
         {
             Data = new GameData();
