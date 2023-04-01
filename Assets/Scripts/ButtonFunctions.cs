@@ -63,11 +63,11 @@ public class ButtonFunctions : MonoBehaviour
 
     public void SaveFile(string fileName)
     {
-        Save.SaveFile(fileName);
+        ObjectSaver.SaveFile(fileName);
     }
 
     public void LoadFile(string fileName)
     {
-        Save.LoadFile(fileName);
+        ObjectSaver.Load(fileName);
     }
 }

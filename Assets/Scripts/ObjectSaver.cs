@@ -2,9 +2,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public static class Save
+public static class ObjectSaver
 {
-    public static void SaveFile(string fileName)
+    public static void Save(string fileName, object obj)
     {
         string destination = Application.persistentDataPath + "/" + fileName;
         FileStream file;
@@ -13,11 +13,11 @@ public static class Save
         else file = File.Create(destination);
 
         BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, GameManager.Instance.Data);
+        bf.Serialize(file, obj);
         file.Close();
     }
 
-    public static GameData LoadFile(string fileName)
+    public static object Load(string fileName)
     {
         string destination = Application.persistentDataPath + "/" + fileName;
         FileStream file;
@@ -30,7 +30,7 @@ public static class Save
         }
 
         BinaryFormatter bf = new BinaryFormatter();
-        GameData data = (GameData)bf.Deserialize(file);
+        object data = bf.Deserialize(file);
         file.Close();
         return data;
     }

@@ -16,16 +16,16 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        Data = Save.LoadFile("save1.dat");
+        Data = (GameData)ObjectSaver.Load("save1.dat");
         if (Data == null)
         {
-            Data = new GameData(
-                new IntFork(0, 1),
-                new IntFork(50,  100),
-                new IntFork(-5,  5),
-                new IntFork(-5,  5)
-            );
+            Data = new GameData();
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        Data.Save("save1.dat");
     }
 
     public void LoadScene(string sceneName)

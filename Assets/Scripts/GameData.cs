@@ -1,14 +1,3 @@
-public struct IntFork
-{
-    public IntFork(int min, int max)
-    {
-        Min = min;
-        Max = max;
-    }
-    public int Min,
-               Max;
-}
-
 public enum SocialClass
 {
     Overlord,
@@ -17,39 +6,22 @@ public enum SocialClass
     Length // Keep this at the end
 }
 
-public enum Country
-{
-    England,
-    France,
-    Spain,
-    Length // Keep this at the end
-}
-
 [System.Serializable]
 public class GameData
 {
-    public string name;
-    public Country country;
-    public float timePlayed;
+    public string name = "Player";
+    public uint daysPlayed = 0;
+    public uint requestsAccepted = 0;
+    public uint requestsDeclined = 0;
 
-    public int treasury; 
-    public int landOwned; // in acres
-    public int population;
+    public uint treasury = 100;
+    public uint landOwned = 10; // in acres
+    public uint population = 100;
+    public float crimeRate = 1;
     public int[] friendshipScores;
-    public int[] diplomacyScores;
 
-    public GameData(IntFork forkTreasury, IntFork forkPopulation, IntFork forkFriendship, IntFork forkDiplomacy)
+    public void Save(string filename)
     {
-        name = "Player";
-        country = (Country)UnityEngine.Random.Range(0, (int)Country.Length);
-        timePlayed = 0f;
-
-        treasury = UnityEngine.Random.Range(forkTreasury.Min, forkTreasury.Max);
-        landOwned = 10;
-        population = UnityEngine.Random.Range(forkPopulation.Min, forkPopulation.Max);
-        friendshipScores = new int[(int)SocialClass.Length];
-        System.Array.Fill(friendshipScores, UnityEngine.Random.Range(forkFriendship.Min, forkFriendship.Max));
-        diplomacyScores = new int[(int)Country.Length];
-        System.Array.Fill(diplomacyScores, UnityEngine.Random.Range(forkDiplomacy.Min, forkDiplomacy.Max));
+        ObjectSaver.Save(filename, this);
     }
 }
