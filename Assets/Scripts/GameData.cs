@@ -1,6 +1,3 @@
-using System;
-using UnityEngine;
-
 public enum SocialClass
 {
     Overlord,
@@ -30,23 +27,18 @@ public class GameData
     public int[] friendshipScores;
     public int[] diplomacyScores;
 
-    public GameData(Vector2Int forkTreasury, Vector2Int forkPopulation, Vector2Int forkFriendship, Vector2Int forkDiplomacy)
+    public GameData(IntFork forkTreasury, IntFork forkPopulation, IntFork forkFriendship, IntFork forkDiplomacy)
     {
-        int forkValue = 0;
         name = "Player";
         country = (Country)UnityEngine.Random.Range(0, (int)Country.Length);
         timePlayed = 0f;
 
-        forkValue = UnityEngine.Random.Range(forkTreasury.x, forkTreasury.y);
-        treasury = forkValue;
+        treasury = UnityEngine.Random.Range(forkTreasury.Min, forkTreasury.Max);
         landOwned = 10;
-        forkValue = UnityEngine.Random.Range(forkPopulation.x, forkPopulation.y);
-        population = forkValue;
+        population = UnityEngine.Random.Range(forkPopulation.Min, forkPopulation.Max);
         friendshipScores = new int[(int)SocialClass.Length];
-        forkValue = UnityEngine.Random.Range(forkFriendship.x, forkFriendship.y);
-        System.Array.Fill(friendshipScores, forkValue);
+        System.Array.Fill(friendshipScores, UnityEngine.Random.Range(forkFriendship.Min, forkFriendship.Max));
         diplomacyScores = new int[(int)Country.Length];
-        forkValue = UnityEngine.Random.Range(forkDiplomacy.x, forkDiplomacy.y);
-        System.Array.Fill(diplomacyScores, 0);
+        System.Array.Fill(diplomacyScores, UnityEngine.Random.Range(forkDiplomacy.Min, forkDiplomacy.Max));
     }
 }

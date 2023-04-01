@@ -19,7 +19,12 @@ public class GameManager : MonoBehaviour
         Data = Save.LoadFile("save1.dat");
         if (Data == null)
         {
-            Data = new GameData(new Vector2Int(0, 1), new Vector2Int(0, 1), new Vector2Int(0, 1), new Vector2Int(0, 1));
+            Data = new GameData(
+                new IntFork(0, 1),
+                new IntFork(50,  100),
+                new IntFork(-5,  5),
+                new IntFork(-5,  5)
+            );
         }
     }
 

@@ -4,7 +4,6 @@ public enum RequestType
     FiefDonation,
     Alliance,
     MilitaryIntervention,
-    Tribute,
     Length // Keep this at the end
 }
 
@@ -17,10 +16,7 @@ public class Request
     public Consequence Accept { get; private set; } = null;
     public Consequence Decline { get; private set; } = null;
 
-    public Request()
-    {
-        Randomize();
-    }
+ 
 
     public void AcceptConsequences()
     {
@@ -51,9 +47,6 @@ public class Request
             case RequestType.MilitaryIntervention:
                 GenerateMilitaryInterventionRequest();
                 break;
-            case RequestType.Tribute:
-                GenerateTributeRequest();
-                break;
             default: throw new System.Exception("Invalid RequestType");
         }
     }
@@ -80,11 +73,5 @@ public class Request
     {
         Name = "Military Intervention Request";
         Body = "We need military intervention to fight our enemies. Please give us one.";
-    }
-
-    private void GenerateTributeRequest()
-    {
-        Name = "Tribute Request";
-        Body = "We need tribute to pay our soldiers. Please give us some.";
     }
 }

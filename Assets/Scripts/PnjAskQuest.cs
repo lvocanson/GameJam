@@ -16,7 +16,7 @@ public class PnjAskQuest : MonoBehaviour
 
         if (transform.position.x >= 2.51)
         {
-            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, 0, -1);
+            transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, -2.73f, -1) ;
 
         }
         else
