@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,9 +12,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        this.AddComponent<AudioManager>();
-
         Instance = this;
         DontDestroyOnLoad(gameObject);
 

@@ -6,7 +6,7 @@ public class GameDataEditor : EditorWindow
     GameData data = null;
     string filename = "save1.dat";
     bool showRuntimeGameData = false;
-    bool showFriendships = false;
+    bool showFriendships = true;
 
     [MenuItem("Editor/Game Data Editor")]
     public static void ShowWindow()

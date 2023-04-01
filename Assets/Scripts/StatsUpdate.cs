@@ -19,6 +19,7 @@ public class StatsUpdate : MonoBehaviour
         population.text = GameManager.Instance.Data.Population.ToString();
         landOwned.text = GameManager.Instance.Data.LandOwned.ToString();
         dayPassed.text = GameManager.Instance.Data.DaysPlayed.ToString();
+
         for (int i = 0; i < friendship.Length; i++)
         {
             friendship[i].GetComponent<ProgressStatBar>().UpdateProgression(GameManager.Instance.Data.FriendshipScores[i]);

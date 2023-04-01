@@ -34,26 +34,27 @@ public class ProgressStatBar : MonoBehaviour
     {
         int score = value;
         if (score > 0)
-            progression = score % 50;
+            progression = Mathf.Min(score / 50, 7);
         else
             progression = 0;
 
         if (progression <= 0)
             backgroundImage.color = Color.black;
-        else
+        else if (progression > 0)
             backgroundImage.color = progressionColors[progression - 1];
 
         fillImage.color = progressionColors[progression];
         UpdateBar(score);
     }
 
-    private void UpdateBar(int value)
+    private void UpdateBar(int score)
     {
-        int length = value;
+        int length = score;
         if (length > 50)
-            length -= value - (progression * 50);
+            length = score - (progression * 50);
         if (length <= 0)
         {
+            fillBar.GetComponent<RectTransform>().sizeDelta = new Vector2 (50, fillBar.GetComponent<RectTransform>().sizeDelta.y);
             fillBar.GetComponent<RectTransform>().pivot = new Vector2(1, 0.5f);
             if (length < -50)
                 length += 50;
