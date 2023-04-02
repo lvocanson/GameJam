@@ -25,7 +25,6 @@ public class ProgressStatBar : MonoBehaviour
         {
             fillBar.color = BadColor;
         }
-        fillBar.rectTransform.sizeDelta = new Vector2(Mathf.Abs(value / 2), fillBar.GetComponent<RectTransform>().sizeDelta.y);
-
+        fillBar.rectTransform.sizeDelta = new Vector2(Mathf.Min(Mathf.Abs(value / 2), 50), fillBar.GetComponent<RectTransform>().sizeDelta.y);
     }
 }
