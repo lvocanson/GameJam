@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class NameNPC : MonoBehaviour
 {
-    [SerializeField] GameObject quest;
+    [SerializeField] GameObject request;
+
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<NPCAskQuest>().nameNPC;
+        GetComponent<TextMeshProUGUI>().text = request.GetComponent<NPCAskQuest>().nameNPC;
     }
 }

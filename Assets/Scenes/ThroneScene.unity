@@ -474,6 +474,10 @@ PrefabInstance:
       propertyPath: quest
       value: 
       objectReference: {fileID: 99884703}
+    - target: {fileID: 6773248491159053542, guid: a80b037e0b090b44fba913b2ba4e7472, type: 3}
+      propertyPath: request
+      value: 
+      objectReference: {fileID: 99884703}
     - target: {fileID: 6773248491159053543, guid: a80b037e0b090b44fba913b2ba4e7472, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -2
@@ -681,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bcebdbfc57bb142a1c06c80450eb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 99884703}
+  request: {fileID: 99884703}
 --- !u!1 &739250946
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,11 +23,7 @@ public static class ObjectSaver
         FileStream file;
 
         if (File.Exists(destination)) file = File.OpenRead(destination);
-        else
-        {
-            Debug.LogWarning("Can't find a file at: " + destination);
-            return default;
-        }
+        else return default;
 
         BinaryFormatter bf = new BinaryFormatter();
         T data = (T)bf.Deserialize(file);

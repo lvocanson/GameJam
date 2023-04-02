@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class RequestNPC : MonoBehaviour
 {
-    [SerializeField] GameObject quest;
+    [SerializeField] GameObject request;
 
     void Update()
     {
-        GetComponent<TextMeshProUGUI>().text = quest.GetComponent<NPCAskQuest>().request.Body;
+        GetComponent<TextMeshProUGUI>().text = request.GetComponent<NPCAskQuest>().request.Body;
     }
 }

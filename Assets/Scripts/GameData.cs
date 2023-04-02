@@ -22,6 +22,7 @@ public class GameData
     public int RequestsDeclined { get; set; } = 0;
     private int _timeDay = 0;
     public int TimeDay { get { return _timeDay; } set { _timeDay = Min(Max(0, value), 4); } }
+
     // Statistics
     public int Treasury { get; set; } = 100;
     public float IncomeMultiplier { get; set; } = 1;

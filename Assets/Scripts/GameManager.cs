@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
-    public GameData Data { get; private set; }
+    public static GameManager Instance { get; private set; } = null;
+    public GameData Data { get; private set; } = null;
     public AudioManager AudioManager { get; private set; }
 
     private void Awake()
@@ -17,12 +17,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        Data = ObjectSaver.Load<GameData>("save1.dat");
-        if (Data == null)
-        {
-            Data = new GameData();
-        }
-
+        LoadSave();
         AudioManager = GetComponent<AudioManager>();
         AudioManager.PlayBGMenu();
 
@@ -35,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Data.Save("save1.dat");
+        Data.Save("save.dat");
     }
 
     public void LoadScene(string sceneName)
@@ -56,8 +51,17 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadSave(string fileName)
+    public void NewGame()
     {
-        Data = ObjectSaver.Load<GameData>(fileName);
+        Data = new GameData();
+    }
+
+    public void LoadSave()
+    {
+        Data = ObjectSaver.Load<GameData>("save.dat");
+        if (Data == null)
+        {
+            NewGame();
+        }
     }
 }

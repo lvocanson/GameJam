@@ -85,8 +85,6 @@ public static class DataBase
             },
             () =>
             {
-                Data.FriendshipScores[(int)SocialClass.Lord] -= 10;
-                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(0, 11);
             }),
      new Request(
             "New Market",

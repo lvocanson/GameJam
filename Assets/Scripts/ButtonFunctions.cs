@@ -49,8 +49,14 @@ public class ButtonFunctions : MonoBehaviour
         GameManager.Instance.GetComponent<AudioManager>().Volume = value;
     }
 
-    public void LoadSave(string fileName)
+    public void NewSave()
     {
-        GameManager.Instance.LoadSave(fileName);
+        GameManager.Instance.NewGame();
+        GameManager.Instance.LoadScene("ThroneScene");
+    }
+
+    public void LoadSave()
+    {
+        GameManager.Instance.LoadSave();
     }
 }
