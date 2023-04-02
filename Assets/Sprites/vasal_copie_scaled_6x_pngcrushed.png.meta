@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 78057143121c38847b4517a0ef2524c3
+guid: 981c1d753f5a50f4192e9902d5b3160f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: all_scaled_6x_pngcrushed_0
+      name: vasal_copie_scaled_6x_pngcrushed_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 264
-        height: 528
+        y: 6
+        width: 252
+        height: 492
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4c2158d15630014b9093e4faa8d56cf
-      internalID: -2048484787
+      spriteID: 8cf04725cf82e084e89a09433ad0d34e
+      internalID: -254590111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_scaled_6x_pngcrushed_1
+      name: vasal_copie_scaled_6x_pngcrushed_1
       rect:
         serializedVersion: 2
-        x: 426
-        y: 0
-        width: 270
-        height: 534
+        x: 360
+        y: 12
+        width: 252
+        height: 492
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55f3fab6f8acba64c9fa981c502a809c
-      internalID: -1359775849
+      spriteID: 85659235ec82af04db47af261ebf618a
+      internalID: 635610310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_scaled_6x_pngcrushed_2
+      name: vasal_copie_scaled_6x_pngcrushed_2
       rect:
         serializedVersion: 2
-        x: 846
+        x: 798
         y: 0
-        width: 270
-        height: 534
+        width: 252
+        height: 504
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0628d6c0ca5d8ab4fb0d2ee644bcc672
-      internalID: 493184707
+      spriteID: cb2ed5a313f6d374489f3216af379ce9
+      internalID: -590159229
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_scaled_6x_pngcrushed_3
+      name: vasal_copie_scaled_6x_pngcrushed_3
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 0
-        width: 264
-        height: 528
+        x: 1350
+        y: 6
+        width: 252
+        height: 492
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09e92a694c6dfa3498c057effb301340
-      internalID: -690534506
+      spriteID: f1569867f42d9fb49b0bcfe18d1ae7d2
+      internalID: -189415351
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      all_scaled_6x_pngcrushed_0: -2048484787
-      all_scaled_6x_pngcrushed_1: -1359775849
-      all_scaled_6x_pngcrushed_2: 493184707
-      all_scaled_6x_pngcrushed_3: -690534506
+      vasal_copie_scaled_6x_pngcrushed_0: -254590111
+      vasal_copie_scaled_6x_pngcrushed_1: 635610310
+      vasal_copie_scaled_6x_pngcrushed_2: -590159229
+      vasal_copie_scaled_6x_pngcrushed_3: -189415351
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

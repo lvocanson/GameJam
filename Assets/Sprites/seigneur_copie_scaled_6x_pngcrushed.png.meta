@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 752461711c7679144b436c2980c97a7f
+guid: 856b6a88531236e4f8e5452a32023774
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,54 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: payson_scaled_6x_pngcrushed_0
+      name: seigneur_copie_scaled_6x_pngcrushed_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 18
-        width: 396
-        height: 522
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52bc5be307b99f14697565ec9bdf1a83
-      internalID: 1393898870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: payson_scaled_6x_pngcrushed_1
-      rect:
-        serializedVersion: 2
-        x: 414
         y: 0
-        width: 396
-        height: 534
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d08745ad0aeab647b68081bf5d01906
-      internalID: -544576796
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: payson_scaled_6x_pngcrushed_2
-      rect:
-        serializedVersion: 2
-        x: 846
-        y: 24
-        width: 396
+        width: 216
         height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4567311622a61d441b3e7875c223ce51
-      internalID: -1754050625
+      spriteID: bec4f6fc04c4ce54d8840f2456dd46db
+      internalID: -1529768973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: payson_scaled_6x_pngcrushed_3
+      name: seigneur_copie_scaled_6x_pngcrushed_1
       rect:
         serializedVersion: 2
-        x: 1266
-        y: 24
-        width: 396
+        x: 426
+        y: 0
+        width: 216
         height: 516
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,8 +140,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c8da7beab926544093b69a0ebef3be1
-      internalID: 11575083
+      spriteID: 238e791e442df2b42933ebb26df258a8
+      internalID: -1126655678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seigneur_copie_scaled_6x_pngcrushed_2
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 0
+        width: 216
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65e7690d3932a84888366663f2d5fc6
+      internalID: -1386929400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: seigneur_copie_scaled_6x_pngcrushed_3
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 0
+        width: 216
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4631b8bfea54e974f845f730e0cf0f8e
+      internalID: 369370967
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      payson_scaled_6x_pngcrushed_0: 1393898870
-      payson_scaled_6x_pngcrushed_1: -544576796
-      payson_scaled_6x_pngcrushed_2: -1754050625
-      payson_scaled_6x_pngcrushed_3: 11575083
+      seigneur_copie_scaled_6x_pngcrushed_0: -1529768973
+      seigneur_copie_scaled_6x_pngcrushed_1: -1126655678
+      seigneur_copie_scaled_6x_pngcrushed_2: -1386929400
+      seigneur_copie_scaled_6x_pngcrushed_3: 369370967
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
