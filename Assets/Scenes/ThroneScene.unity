@@ -1194,6 +1194,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7096674807082533384, guid: 6632429179487f845844b72019440ddc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -252.70001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096674807308681299, guid: 6632429179487f845844b72019440ddc, type: 3}
+      propertyPath: m_text
+      value: Lord
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096674807361947023, guid: 6632429179487f845844b72019440ddc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -125.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096674807361947024, guid: 6632429179487f845844b72019440ddc, type: 3}
+      propertyPath: m_Name
+      value: lord
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096674808372420375, guid: 6632429179487f845844b72019440ddc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.29999924
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6632429179487f845844b72019440ddc, type: 3}
 --- !u!1 &1796895908

@@ -21,7 +21,7 @@ public class GameData
     public int RequestsAccepted { get; set; } = 0;
     public int RequestsDeclined { get; set; } = 0;
     private int _timeDay = 0;
-    public int TimeDay { get { return _timeDay; } set { _timeDay = Min(Max(0, value), 4); } }
+    public int TimeDay { get { return _timeDay; } set { _timeDay = value % 4; } }
 
     // Statistics
     public int Treasury { get; set; } = 100;
@@ -29,7 +29,7 @@ public class GameData
     public int LandOwned { get; set; } = 10;
     public int Population { get; set; } = 100;
     private int _crimeRate = 1; // Always between 0 and 100
-    public int CrimeRate { get { return _crimeRate; } set { _crimeRate = Min(Max(0, value), 100); } }
+    public int CrimeRate { get { return _crimeRate; } set { _crimeRate = Clamp(value, 0, 100); } }
     public int[] FriendshipScores { get; set; } = new int[(int)SocialClass.Length]; // init to 0
 
     // Auto properties

@@ -3257,8 +3257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c5263a30c1eb4f889ca6a99fa16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBar: {fileID: 8548809629371787612}
-  fillBar: {fileID: 3064499608797069976}
+  backgroundBar: {fileID: 8329925220472207693}
+  fillBar: {fileID: 5718621936568758204}
 --- !u!1 &6663868153392987170
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,8 +3646,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c5263a30c1eb4f889ca6a99fa16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBar: {fileID: 7096674808106674008}
-  fillBar: {fileID: 7096674807093559622}
+  backgroundBar: {fileID: 7096674808106674006}
+  fillBar: {fileID: 7096674807093559620}
 --- !u!1 &7096674806811507932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5548,8 +5548,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c5263a30c1eb4f889ca6a99fa16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBar: {fileID: 7096674807892668190}
-  fillBar: {fileID: 7096674807557866973}
+  backgroundBar: {fileID: 7096674807892668188}
+  fillBar: {fileID: 7096674807557866971}
 --- !u!1 &7096674807952225134
 GameObject:
   m_ObjectHideFlags: 0
@@ -6205,8 +6205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d1c5263a30c1eb4f889ca6a99fa16fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundBar: {fileID: 7096674808294443209}
-  fillBar: {fileID: 7096674807086854945}
+  backgroundBar: {fileID: 7096674808294443207}
+  fillBar: {fileID: 7096674807086855007}
 --- !u!1 &7096674808636730830
 GameObject:
   m_ObjectHideFlags: 0

@@ -137,13 +137,13 @@ public static class DataBase
     {
         new Request(
             "Give your money to God!",
-            "GOD WILL SAVE US HE NEED YOUR MONEY TO SAVE YOU FROM HELL! PLEASE GIVE US MONEY!",
+            "GOD NEEDS YOUR MONEY TO SAVE YOU FROM HELL! GIVE US MONEY!",
             SocialClass.Clergy,
             () =>
             {
                 Data.Treasury /= 2;
                 Data.FriendshipScores[(int)SocialClass.Clergy] += 15;
-                if (Data.FriendshipScores[(int)SocialClass.Clergy] < 0)
+                if (Data.FriendshipScores[(int)SocialClass.Clergy] > 0)
                 {
                     Data.FriendshipScores[(int)SocialClass.Overlord] += Range(10, 21);
                     Data.FriendshipScores[(int)SocialClass.Lord] += Range(5, 16);

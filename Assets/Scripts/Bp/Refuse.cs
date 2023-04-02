@@ -6,7 +6,7 @@ public class Refuse : MonoBehaviour
 
     public void OnClick()
     {
-        quest.GetComponent<NPCAskQuest>().request.AcceptConsequences();
+        quest.GetComponent<NPCAskQuest>().request.DeclineConsequences();
         quest.GetComponent<NPCAskQuest>()._questFinished = true;
     }
 }
