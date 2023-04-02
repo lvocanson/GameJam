@@ -6,6 +6,7 @@ public class NPCAskQuest : MonoBehaviour
     [SerializeField] GameObject peasant;
     [SerializeField] GameObject vassal;
     [SerializeField] GameObject overLord;
+    [SerializeField] GameObject Clergy;
 
     public Request request;
     public string nameNPC;
@@ -28,17 +29,26 @@ public class NPCAskQuest : MonoBehaviour
         socialClass = request.Importance;
         switch (socialClass)
         {
+            case SocialClass.Clergy:
+                Clergy.SetActive(true);
+                peasant.SetActive(false);
+                vassal.SetActive(false);
+                overLord.SetActive(false);
+                break;
             case SocialClass.Overlord:
+                Clergy.SetActive(false);
                 peasant.SetActive(false);
                 vassal.SetActive(false);
                 overLord.SetActive(true);
                 break;
             case SocialClass.Lord:
+                Clergy.SetActive(false);
                 peasant.SetActive(false);
                 vassal.SetActive(true);
                 overLord.SetActive(false);
                 break;
             case SocialClass.Peasant:
+                Clergy.SetActive(false);
                 peasant.SetActive(true);
                 vassal.SetActive(false);
                 overLord.SetActive(false);
