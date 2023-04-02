@@ -95,6 +95,7 @@ public static class DataBase
             {
                 Data.IncomeMultiplier += 0.01f; // Trade tax
                 Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+                Data.CrimeRate += Range(0, 2);
             },
             () =>
             {
@@ -110,7 +111,8 @@ public static class DataBase
                 Data.Population += Range(5, 50);
                 Data.FriendshipScores[(int)SocialClass.Overlord] += 10;
                 Data.FriendshipScores[(int)SocialClass.Lord] += 5;
-                Data.FriendshipScores[(int)SocialClass.Overlord] += 5;
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 5;
+                Data.CrimeRate += Range(0, 3);
             },
             () =>
             {

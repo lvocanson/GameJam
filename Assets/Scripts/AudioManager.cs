@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
     /// Change the volume of the audio source.
     /// </summary>
     /// <param name="value">New value (between 0 and 1)</param>
-    public float Volume { get; set; } = 1f;
+    public float Volume { get => audioSource.volume; set => audioSource.volume = value; }
 
     /// <summary>
     /// Play a sound effect.
@@ -33,10 +33,5 @@ public class AudioManager : MonoBehaviour
     {
         audioSource.clip = backgroundMusicGame;
         audioSource.Play();
-    }
-
-    private void Update()
-    {
-        audioSource.volume = Volume / 2;
     }
 }
