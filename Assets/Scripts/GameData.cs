@@ -28,7 +28,7 @@ public class GameData
         set 
         {
             _timeDay = value;
-            if (value >= 4)
+            if (value >= 4) // New day
             {
                 _timeDay = 0;
                 DaysPlayed++;
