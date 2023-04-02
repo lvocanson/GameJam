@@ -57,7 +57,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866623a19114f445aa8f2e65f5375ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  click: []
-  dialogue: []
+  click:
+  - {fileID: 8300000, guid: 4e7ce19b0c9dda1458946554f940d3b8, type: 3}
+  - {fileID: 8300000, guid: 7abccce1359ba0d4a8421bcc212783c5, type: 3}
+  - {fileID: 8300000, guid: e8af9035f5758f44da37af4225a02619, type: 3}
+  - {fileID: 8300000, guid: c230389cdba1a4d47bda71c4d0e2b6f9, type: 3}
+  - {fileID: 8300000, guid: f44b7388dcf5dd14a981e85a3aa5a9f6, type: 3}
+  - {fileID: 8300000, guid: cb231dc76449c8e46989b1203a51c32d, type: 3}
+  dialogue:
+  - {fileID: 8300000, guid: b7aa488d7642ae743bd3eb065c15f160, type: 3}
+  - {fileID: 8300000, guid: 062c39bb4d6897940ac579e540fe81cc, type: 3}
+  - {fileID: 8300000, guid: 37d6433c37433084da816ab24c11d2ab, type: 3}
+  - {fileID: 8300000, guid: 5db375bfb7b72254eb48cc4390ffbf7e, type: 3}
+  - {fileID: 8300000, guid: 29721f0de7a39754b8afa2acf55504c9, type: 3}
+  - {fileID: 8300000, guid: ab4a77ff17fa6ef4aad783044c144a37, type: 3}
   backgroundMusicMenu: {fileID: 8300000, guid: e51d4931b3b3c194cb17e52ae4e36cac, type: 3}
   backgroundMusicGame: {fileID: 8300000, guid: 6c9f8fc809371224caeb2f481dd06cc0, type: 3}
