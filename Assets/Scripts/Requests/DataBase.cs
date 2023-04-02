@@ -183,8 +183,8 @@ public static class DataBase
     public static Request[] ClericalRequest = new Request[]
     {
         new Request(
-            "Give your money to God!",
-            "GOD NEEDS YOUR MONEY TO SAVE YOU FROM HELL! GIVE US MONEY!",
+            "God is here!",
+            "GOD IS AMONG US! ACCEPT HIM OR GO TO HELL!",
             SocialClass.Clergy,
             () =>
             {
@@ -220,20 +220,6 @@ public static class DataBase
             () =>
             {
                 Data.FriendshipScores[(int)SocialClass.Clergy] -= 10;
-            }),
-        new Request(
-            "Construct a new cathedral",
-            "We have requested funds to build a new cathedral. Can you provide support?",
-            SocialClass.Clergy,
-            () =>
-                                             {
-            Data.Treasury -= 60;
-            Data.FriendshipScores[(int)SocialClass.Clergy] += 20;
-            Data.FriendshipScores[(int)SocialClass.Peasant] += 15;
-            },
-            () =>
-            {
-                Data.FriendshipScores[(int)SocialClass.Clergy] -= 20;
             })
     };
 
