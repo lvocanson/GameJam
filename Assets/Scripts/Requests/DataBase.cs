@@ -66,7 +66,7 @@ public static class DataBase
             "We would like to purchase some land from you.",
             SocialClass.Overlord,
             () => {
-                Data.Treasury += Data.LandOwned;
+                Data.Treasury += (int)(0.9f * Data.LandOwned)*20;
                 Data.LandOwned = (int)(0.9f * Data.LandOwned);
                 Data.FriendshipScores[(int)SocialClass.Overlord] += 10;
             },
@@ -98,8 +98,20 @@ public static class DataBase
             () =>
             {
                 Data.Population--;
+            }),
+    new Request(
+            "New Town",
+            "A merchant has requested permission to build a new town. Allow?",
+            SocialClass.Lord,
+            () =>
+            {
+                Data.IncomeMultiplier += 0.05f; // Trade tax
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+            },
+            () =>
+            {
+                Data.Population--;
             })
-
     };
 
     public static Request[] MilitaryRequests = new Request[]
@@ -130,6 +142,40 @@ public static class DataBase
             {
                 Data.CrimeRate++;
                 Data.FriendshipScores[(int)SocialClass.Peasant] -= 5;
+            }),
+        new Request(
+            "Our town is under attack",
+            "My town is under attack by a group of criminal! Please send us soldiers.",
+            SocialClass.Lord,
+            () =>
+            {
+                Data.CrimeRate--;
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+                Data.FriendshipScores[(int)SocialClass.Lord] += 5;
+                Data.IncomeMultiplier -= 0.1f; // Cost of patrol
+                Data.Treasury -= 30;
+            },
+            () =>
+            {
+                Data.CrimeRate++;
+                Data.FriendshipScores[(int)SocialClass.Overlord] -= 10;
+            }),
+        new Request(
+            "I found a Redhead Witch Left-handed",
+            "I found a Redhead Witch Left-handed, can you send some soldiers? I feel unsafe.",
+            SocialClass.Peasant,
+            () =>
+            {
+                Data.CrimeRate--;
+                Data.Population--;
+                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+                Data.IncomeMultiplier -= 0.2f; // Cost of patrol
+                Data.Treasury += 5;
+            },
+            () =>
+            {
+                Data.CrimeRate++;
+                Data.FriendshipScores[(int)SocialClass.Peasant] -= 10;
             })
     };
 
@@ -172,7 +218,21 @@ public static class DataBase
             },
             () =>
             {
-                Data.FriendshipScores[(int)SocialClass.Clergy] += 10;
+                Data.FriendshipScores[(int)SocialClass.Clergy] -= 10;
+            }),
+        new Request(
+            "Construct a new cathedral",
+            "We have requested funds to build a new cathedral. Can you provide support?",
+            SocialClass.Clergy,
+            () =>
+                                             {
+            Data.Treasury -= 60;
+            Data.FriendshipScores[(int)SocialClass.Clergy] += 20;
+            Data.FriendshipScores[(int)SocialClass.Peasant] += 15;
+            },
+            () =>
+            {
+                Data.FriendshipScores[(int)SocialClass.Clergy] -= 20;
             })
     };
 
@@ -207,6 +267,20 @@ public static class DataBase
             () =>
             {
                 Data.Population -= Range(0, Data.Population / 10);
+            }),
+        new Request(
+            "Drink Interdiction",
+            "Sir, Can we ban drinking on public roads? Drunk beggars annoy me.",
+            SocialClass.Lord,
+            () =>
+            {
+                Data.FriendshipScores[(int)SocialClass.Lord] += 2;
+                Data.FriendshipScores[(int)SocialClass.Peasant] = Data.FriendshipScores[(int)SocialClass.Peasant] / 2;
+            },
+            () =>
+            {
+                Data.FriendshipScores[(int)SocialClass.Lord] -= 2;
+                Data.IncomeMultiplier += 0.1f;
             })
     };
 
