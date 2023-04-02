@@ -1,3 +1,4 @@
+using UnityEngine;
 using static UnityEngine.Mathf;
 
 public enum SocialClass
@@ -18,7 +19,7 @@ public class GameData
     // Game Data
     public bool IsLosed { get; set; } = false;
     public string Name { get; set; } = "Player";
-    public int DaysPlayed { get; private set; } = 0;
+    public int DaysPlayed { get; private set; } = 1;
     public int RequestsAccepted { get; set; } = 0;
     public int RequestsDeclined { get; set; } = 0;
     private int _timeDay = 0;
@@ -76,6 +77,21 @@ public class GameData
         get
         {
             return (int)(Population * IncomeMultiplier - LandOwned) / 10;
+        }
+    }
+    private int AverageFriendship
+    {
+        get
+        {
+            int avg = 0;
+            for (int i = 0; i < FriendshipScores.Length; i++)
+            {
+                avg += FriendshipScores[i];
+            }
+            avg /= FriendshipScores.Length;
+            if (avg <= -25)
+                IsLosed = true;
+            return avg;
         }
     }
 

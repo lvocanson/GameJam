@@ -66,7 +66,7 @@ public static class DataBase
             "We would like to purchase some land from you.",
             SocialClass.Overlord,
             () => {
-                Data.Treasury += (int)(0.9f * Data.LandOwned)*20;
+                Data.Treasury += (int)(0.1f * Data.LandOwned)*20;
                 Data.LandOwned = (int)(0.9f * Data.LandOwned);
                 Data.FriendshipScores[(int)SocialClass.Overlord] += 10;
             },
@@ -175,6 +175,7 @@ public static class DataBase
             () =>
             {
                 Data.CrimeRate++;
+                Data.Population--;
                 Data.FriendshipScores[(int)SocialClass.Peasant] -= 10;
             })
     };
@@ -247,22 +248,22 @@ public static class DataBase
                 Data.CrimeRate /= 2;
                 Data.Population--;
                 Data.FriendshipScores[(int)SocialClass.Lord] += 5;
-                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(-10, 11);
+                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(-5, 5);
             },
             () =>
             {
-                Data.CrimeRate += 3;
+                Data.CrimeRate += 2;
                 Data.FriendshipScores[(int)SocialClass.Lord] -= 5;
-                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(-5, 6);
+                Data.FriendshipScores[(int)SocialClass.Peasant] += Range(-10, 10);
             }),
         new Request(
             "Carnival Authorisation",
-            "Sir, Can we organaise a carnival?",
+            "Sir, Can we organize a carnival?",
             SocialClass.Peasant,
             () =>
             {
                 Data.Treasury -= Data.Population / 3;
-                Data.Population += Range(5, 101);
+                Data.Population += Range(5, 30);
             },
             () =>
             {
@@ -274,6 +275,7 @@ public static class DataBase
             SocialClass.Lord,
             () =>
             {
+                Data.CrimeRate++;
                 Data.FriendshipScores[(int)SocialClass.Lord] += 2;
                 Data.FriendshipScores[(int)SocialClass.Peasant] = Data.FriendshipScores[(int)SocialClass.Peasant] / 2;
             },
@@ -312,6 +314,8 @@ public static class DataBase
             },
             () =>
             {
+                Data.FriendshipScores[(int)SocialClass.Peasant] -= Range(5, 16);
+                Data.CrimeRate++;
             }),
         new Request(
             "Help Refugees",
@@ -319,7 +323,7 @@ public static class DataBase
             SocialClass.Lord,
             () =>
             {
-                int num = Range(10, 100);
+                int num = Range(10, 50);
                 Data.Population += num;
                 Data.Treasury -= num;
             },

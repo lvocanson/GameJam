@@ -12,7 +12,7 @@ public class StatsUpdate : MonoBehaviour
 
     private void Update()
     {
-        crimeRate.text = GameManager.Instance.Data.CrimeRate.ToString();
+        crimeRate.text = GameManager.Instance.Data.CrimeRate.ToString() + "%";
         money.text = GameManager.Instance.Data.Treasury.ToString();
         population.text = GameManager.Instance.Data.Population.ToString();
         landOwned.text = GameManager.Instance.Data.LandOwned.ToString();
