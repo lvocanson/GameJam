@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38ed5d8fd8081384c917689720bbbe68
+guid: e91bc5b2e6f33c3458c6c1d5f1c4ec8b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: all_2_scaled_6x_pngcrushed_0
+      name: payson_scaled_6x_pngcrushed (1)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 258
-        height: 504
+        y: 18
+        width: 396
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d275b4a51123ce345ab86105277b7a9a
-      internalID: 2003247179
+      spriteID: efed82b7e5a68714f820a4e14d5cf9cc
+      internalID: -1613439809
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_2_scaled_6x_pngcrushed_1
+      name: payson_scaled_6x_pngcrushed (1)_1
       rect:
         serializedVersion: 2
-        x: 378
+        x: 414
         y: 0
-        width: 264
-        height: 504
+        width: 396
+        height: 534
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6301ac363f6c6924a8eba936c869e77d
-      internalID: 1768216715
+      spriteID: fc0f0d49a90d210478e832450fe71ce7
+      internalID: 959401514
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_2_scaled_6x_pngcrushed_2
+      name: payson_scaled_6x_pngcrushed (1)_2
       rect:
         serializedVersion: 2
-        x: 804
-        y: 0
-        width: 258
-        height: 504
+        x: 846
+        y: 24
+        width: 396
+        height: 522
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8954e3bb18cb6544bbb1674bff8535f5
-      internalID: -395053127
+      spriteID: b50258bac7d2a80408c6d20811c92263
+      internalID: -624859190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all_2_scaled_6x_pngcrushed_3
+      name: payson_scaled_6x_pngcrushed (1)_3
       rect:
         serializedVersion: 2
-        x: 1356
-        y: 0
-        width: 258
-        height: 498
+        x: 1266
+        y: 24
+        width: 396
+        height: 516
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5880e814b21ea69469b8db1d62e31f2b
-      internalID: 2103775298
+      spriteID: 2cab3cdd80c263c41afdead4be3e3ada
+      internalID: 1926464228
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      all_2_scaled_6x_pngcrushed_0: 2003247179
-      all_2_scaled_6x_pngcrushed_1: 1768216715
-      all_2_scaled_6x_pngcrushed_2: -395053127
-      all_2_scaled_6x_pngcrushed_3: 2103775298
+      payson_scaled_6x_pngcrushed (1)_0: -1613439809
+      payson_scaled_6x_pngcrushed (1)_1: 959401514
+      payson_scaled_6x_pngcrushed (1)_2: -624859190
+      payson_scaled_6x_pngcrushed (1)_3: 1926464228
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

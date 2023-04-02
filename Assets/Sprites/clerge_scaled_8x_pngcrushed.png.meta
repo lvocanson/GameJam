@@ -119,8 +119,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b20796269c7bb62488263bc423a50476
-      internalID: 77594716
+      spriteID: 846e130f182157c4fbf06dd5d8331181
+      internalID: -523249233
       vertices: []
       indices: 
       edges: []
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d71913eeb6f223a48b304756ba1e2997
-      internalID: -802119775
+      spriteID: 31647ac5c91596c4a91d0dfb6c45fa6b
+      internalID: -1407309257
       vertices: []
       indices: 
       edges: []
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cf79f4bf0577fd4ea28ae9d3817e4f2
-      internalID: -255225616
+      spriteID: e2d35e40b12c5da4b90b8f95ced0e2ab
+      internalID: 880970150
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c884352c450c63d429b8f1e656b6a893
-      internalID: -1939910761
+      spriteID: d1886c9f64b2614449d82760893508fd
+      internalID: 1712927587
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clerge_scaled_8x_pngcrushed_0: 77594716
-      clerge_scaled_8x_pngcrushed_1: -802119775
-      clerge_scaled_8x_pngcrushed_2: -255225616
-      clerge_scaled_8x_pngcrushed_3: -1939910761
+      clerge_scaled_8x_pngcrushed_0: -523249233
+      clerge_scaled_8x_pngcrushed_1: -1407309257
+      clerge_scaled_8x_pngcrushed_2: 880970150
+      clerge_scaled_8x_pngcrushed_3: 1712927587
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
