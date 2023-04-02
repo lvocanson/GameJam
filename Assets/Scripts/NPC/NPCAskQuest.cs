@@ -63,12 +63,14 @@ public class NPCAskQuest : MonoBehaviour
             if (transform.position.x >= 2.51 && _questFinished == false)
             {
                 transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, -2.73f, -1);
-
             }
             else
             {
-          
                 child.SetActive(true);
+                Clergy.GetComponent<Animator>().speed = 0;
+                peasant.GetComponent<Animator>().speed = 0;
+                vassal.GetComponent<Animator>().speed = 0;
+                overLord.GetComponent<Animator>().speed = 0;
             }
         }
         if (_questFinished)
@@ -86,13 +88,16 @@ public class NPCAskQuest : MonoBehaviour
                     }
                 }
                 child.SetActive(false);
+                Clergy.GetComponent<Animator>().speed = 1;
+                peasant.GetComponent<Animator>().speed = 1;
+                vassal.GetComponent<Animator>().speed = 1;
+                overLord.GetComponent<Animator>().speed = 1;
                 _backtrack = true;
                 transform.Rotate(0, 180, 0);
             }
             if (transform.position.x <= 11.5)
             {
                 transform.position = new Vector3(transform.position.x + _speedMove * Time.deltaTime, -2.73f, -1);
-
             }
             else
             {
