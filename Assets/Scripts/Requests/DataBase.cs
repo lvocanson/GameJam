@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 using static UnityEngine.Random;
 
 public static class DataBase
@@ -263,7 +264,7 @@ public static class DataBase
             {
                 Data.CrimeRate++;
                 Data.FriendshipScores[(int)SocialClass.Lord] += 2;
-                Data.FriendshipScores[(int)SocialClass.Peasant] = Data.FriendshipScores[(int)SocialClass.Peasant] / 2;
+                Data.FriendshipScores[(int)SocialClass.Peasant] -= Mathf.Abs(Data.FriendshipScores[(int)SocialClass.Peasant]) / 2;
             },
             () =>
             {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86;
 using static UnityEngine.Mathf;
 
 public enum SocialClass
@@ -23,10 +24,10 @@ public class GameData
     public int RequestsAccepted { get; set; } = 0;
     public int RequestsDeclined { get; set; } = 0;
     private int _timeDay = 0;
-    public int TimeDay 
-    { 
-        get { return _timeDay; } 
-        set 
+    public int TimeDay
+    {
+        get { return _timeDay; }
+        set
         {
             _timeDay = value;
             if (value >= 4) // New day
@@ -39,8 +40,15 @@ public class GameData
                 {
                     IsLosed = true;
                 }
+                for (int i = 0; i < (int)SocialClass.Length; i++)
+                {
+                    if (FriendshipScores[i] <= -100)
+                    {
+                        IsLosed = true;
+                    }
+                }
             }
-        } 
+        }
     }
 
     // Statistics
@@ -78,21 +86,6 @@ public class GameData
         get
         {
             return (int)(Population * IncomeMultiplier - LandOwned) / 10;
-        }
-    }
-    private int AverageFriendship
-    {
-        get
-        {
-            int avg = 0;
-            for (int i = 0; i < FriendshipScores.Length; i++)
-            {
-                avg += FriendshipScores[i];
-            }
-            avg /= FriendshipScores.Length;
-            if (avg <= -25)
-                IsLosed = true;
-            return avg;
         }
     }
 
