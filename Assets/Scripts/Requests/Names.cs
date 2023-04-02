@@ -5,6 +5,9 @@ public static class Names
         string[] names;
         switch (socialClass)
         {
+            case SocialClass.Clergy:
+                names = Clergy;
+                break;
             case SocialClass.Overlord:
                 names = Overlord;
                 break;
@@ -83,6 +86,37 @@ public static class Names
         "Ralph"
     };
     public static string[] Peasant = new string[] {
+        "John",
+        "William",
+        "Thomas",
+        "Robert",
+        "Richard",
+        "Henry",
+        "Roger",
+        "Walter",
+        "Gilbert",
+        "Simon",
+        "Adam",
+        "Andrew",
+        "Baldwin",
+        "Bartholomew",
+        "Clement",
+        "David",
+        "Elias",
+        "Francis",
+        "Gervase",
+        "Hamon",
+        "Isaac",
+        "Jasper",
+        "Lucas",
+        "Martin",
+        "Nicholas",
+        "Peter",
+        "Ralph",
+        "Sampson",
+        "Stephen"
+    };
+    public static string[] Clergy = new string[] {
         "John",
         "William",
         "Thomas",

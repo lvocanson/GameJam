@@ -12,7 +12,6 @@ public class NPCAskQuest : MonoBehaviour
     private int turn = 0;
 
     private bool _backtrack = false;
-    private bool _questStarted = false;
     public bool _questFinished = false;
     private float _speedMove = 10f;
     SocialClass socialClass;
@@ -60,12 +59,7 @@ public class NPCAskQuest : MonoBehaviour
             }
             else
             {
-                turn++;
-                if (turn == 2)
-                {
-                    turn= 0;
-                    GameManager.Instance.Data.TimeDay++;
-                }
+          
                 child.SetActive(true);
             }
         }
@@ -73,6 +67,16 @@ public class NPCAskQuest : MonoBehaviour
         {
             if (!_backtrack)
             {
+                turn++;
+                if (turn == 2)
+                {
+                    turn = 0;
+                    GameManager.Instance.Data.TimeDay += 1;
+                    if (GameManager.Instance.Data.TimeDay == 4)
+                    {
+                        GameManager.Instance.Data.TimeDay = 0;
+                    }
+                }
                 child.SetActive(false);
                 _backtrack = true;
                 transform.Rotate(0, 180, 0);
@@ -86,7 +90,6 @@ public class NPCAskQuest : MonoBehaviour
             {
                 transform.Rotate(0, 180, 0);
                 _backtrack = false;
-                _questStarted = false;
                 _questFinished = false;
                 nameNPC = Names.GetRandomName(request.Importance);
                 request = DataBase.GetRandomRequest();

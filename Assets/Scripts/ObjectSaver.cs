@@ -25,7 +25,7 @@ public static class ObjectSaver
         if (File.Exists(destination)) file = File.OpenRead(destination);
         else
         {
-            Debug.LogError("Can't find a file at: " + destination);
+            Debug.LogWarning("Can't find a file at: " + destination);
             return default;
         }
 
