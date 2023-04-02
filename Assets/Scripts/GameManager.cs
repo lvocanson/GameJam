@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
             button.GetComponent<Button>().onClick.AddListener(delegate { AudioManager.PlayClick(); }); 
             button.tag = "Untagged";
         }
+
+        if (Data.IsLosed && SceneManager.GetActiveScene().name == "ThroneScene")
+        {
+            LoadScene("LoseScene");
+        }
     }
 
     private void OnApplicationQuit()
@@ -46,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
         if (sceneName == "ThroneScene")
         {
             AudioManager.PlayBGGame();

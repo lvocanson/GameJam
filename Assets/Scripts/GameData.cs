@@ -18,17 +18,54 @@ public class GameData
     // Game Data
     public bool IsLosed { get; set; } = false;
     public string Name { get; set; } = "Player";
-    public int DaysPlayed { get; set; } = 0;
+    public int DaysPlayed { get; private set; } = 0;
     public int RequestsAccepted { get; set; } = 0;
     public int RequestsDeclined { get; set; } = 0;
     private int _timeDay = 0;
-    public int TimeDay { get { return _timeDay; } set { _timeDay = value % 4; } }
+    public int TimeDay 
+    { 
+        get { return _timeDay; } 
+        set 
+        {
+            _timeDay = value;
+            if (value >= 4)
+            {
+                _timeDay = 0;
+                DaysPlayed++;
+                Treasury += DailyIncome;
+                if (Treasury < 0)
+                {
+                    IsLosed = true;
+                }
+            }
+        } 
+    }
 
     // Statistics
     public int Treasury { get; set; } = 100;
     public float IncomeMultiplier { get; set; } = 1;
-    public int LandOwned { get; set; } = 10;
-    public int Population { get; set; } = 100;
+    private int _landOwned = 10;
+    public int LandOwned
+    {
+        get { return _landOwned; }
+        set
+        {
+            _landOwned = value;
+            if (value <= 0)
+                IsLosed = true;
+        }
+    }
+    private int _population = 100;
+    public int Population
+    {
+        get { return _population; }
+        set
+        {
+            _population = value;
+            if (value <= 0)
+                IsLosed = true;
+        }
+    }
     private int _crimeRate = 1; // Always between 0 and 100
     public int CrimeRate { get { return _crimeRate; } set { _crimeRate = Clamp(value, 0, 100); } }
     public int[] FriendshipScores { get; set; } = new int[(int)SocialClass.Length]; // init to 0
