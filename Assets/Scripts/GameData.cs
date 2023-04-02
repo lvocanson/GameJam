@@ -35,7 +35,7 @@ public class GameData
                 _timeDay = 0;
                 DaysPlayed++;
                 Treasury += DailyIncome;
-                Population -= UnityEngine.Random.Range(0, Population * CrimeRate / 100);
+                Population -= Random.Range(0, Population * CrimeRate / 100);
                 if (Treasury < 0)
                 {
                     IsLosed = true;
@@ -61,6 +61,7 @@ public class GameData
         set
         {
             _landOwned = value;
+            Population = Population; // Update population
             if (value <= 0)
                 IsLosed = true;
         }
@@ -71,7 +72,7 @@ public class GameData
         get { return _population; }
         set
         {
-            _population = value;
+            _population = Min(value, LandOwned * 25);
             if (value <= 0)
                 IsLosed = true;
         }

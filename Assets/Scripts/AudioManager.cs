@@ -37,6 +37,6 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        audioSource.volume = Volume;
+        audioSource.volume = Volume / 2;
     }
 }

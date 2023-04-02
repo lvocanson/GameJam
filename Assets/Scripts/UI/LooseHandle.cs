@@ -10,7 +10,8 @@ public class LooseHandle : MonoBehaviour
     {
         if (Data == null || Data.IsLosed == false)
         {
-            Debug.LogError("GameData is null or game is not lost!");
+            looseTitle.text = "Retry the game!";
+            looseDescription.text = string.Empty;
             return;
         }
 

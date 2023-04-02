@@ -101,17 +101,20 @@ public static class DataBase
                 Data.Population--;
             }),
     new Request(
-            "New Town",
-            "A merchant has requested permission to build a new town. Allow?",
-            SocialClass.Lord,
+            "Land Selling",
+            "Sir, allow me to join your kingdom. I'll give your my land and population.",
+            SocialClass.Overlord,
             () =>
             {
-                Data.IncomeMultiplier += 0.05f; // Trade tax
-                Data.FriendshipScores[(int)SocialClass.Peasant] += 10;
+                Data.LandOwned += Range(1, 3);
+                Data.Population += Range(5, 50);
+                Data.FriendshipScores[(int)SocialClass.Overlord] += 10;
+                Data.FriendshipScores[(int)SocialClass.Lord] += 5;
+                Data.FriendshipScores[(int)SocialClass.Overlord] += 5;
             },
             () =>
             {
-                Data.Population--;
+                Data.FriendshipScores[(int)SocialClass.Overlord] -= 20;
             })
     };
 
