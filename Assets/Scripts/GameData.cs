@@ -33,6 +33,7 @@ public class GameData
                 _timeDay = 0;
                 DaysPlayed++;
                 Treasury += DailyIncome;
+                Population -= UnityEngine.Random.Range(0, Population * CrimeRate / 100);
                 if (Treasury < 0)
                 {
                     IsLosed = true;
