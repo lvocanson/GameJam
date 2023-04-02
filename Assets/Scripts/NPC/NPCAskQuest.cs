@@ -60,8 +60,6 @@ public class NPCAskQuest : MonoBehaviour
         }
         if (!_questFinished)
         {
-
-
             if (transform.position.x >= 2.51 && _questFinished == false)
             {
                 transform.position = new Vector3(transform.position.x - _speedMove * Time.deltaTime, -2.73f, -1);
