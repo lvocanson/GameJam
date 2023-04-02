@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioSource;
+
     [Header("Audio Clips")]
     [SerializeField] AudioClip[] click;
     [SerializeField] AudioClip[] dialogue;
@@ -24,10 +26,17 @@ public class AudioManager : MonoBehaviour
     public void PlayDialogue() => AudioSource.PlayClipAtPoint(dialogue[Random.Range(0, dialogue.Length)], Vector2.zero, Volume);
     public void PlayBGMenu()
     {
-        AudioSource.PlayClipAtPoint(backgroundMusicMenu, Vector2.zero, Volume);
+        audioSource.clip = backgroundMusicMenu;
+        audioSource.Play();
     }
     public void PlayBGGame()
     {
-        AudioSource.PlayClipAtPoint(backgroundMusicGame, Vector2.zero, Volume);
+        audioSource.clip = backgroundMusicGame;
+        audioSource.Play();
+    }
+
+    private void Update()
+    {
+        audioSource.volume = Volume;
     }
 }

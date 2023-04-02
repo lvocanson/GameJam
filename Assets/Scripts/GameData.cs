@@ -16,6 +16,7 @@ public class GameData
     public const int NumberOfRequestsDaily = 8;
 
     // Game Data
+    public bool IsLosed { get; set; } = false;
     public string Name { get; set; } = "Player";
     public int DaysPlayed { get; set; } = 0;
     public int RequestsAccepted { get; set; } = 0;

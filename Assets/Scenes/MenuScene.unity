@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 269924854}
   m_Layer: 5
   m_Name: continueGame
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2456,7 +2456,7 @@ GameObject:
   - component: {fileID: 1220852653}
   m_Layer: 5
   m_Name: back
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3408,7 +3408,7 @@ GameObject:
   - component: {fileID: 1685239542}
   m_Layer: 5
   m_Name: optionButton
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3768,7 +3768,7 @@ GameObject:
   - component: {fileID: 1916915902}
   m_Layer: 5
   m_Name: newGame
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4051,7 +4051,7 @@ GameObject:
   - component: {fileID: 1971791149}
   m_Layer: 5
   m_Name: quit
-  m_TagString: Untagged
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4300,10 +4300,6 @@ PrefabInstance:
     - target: {fileID: 313472211102531551, guid: 0fae654897bf776419ab426b6147ff14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7890986871584699366, guid: 0fae654897bf776419ab426b6147ff14, type: 3}
-      propertyPath: audioSource
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fae654897bf776419ab426b6147ff14, type: 3}

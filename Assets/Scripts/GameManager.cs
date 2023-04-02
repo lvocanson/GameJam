@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; } = null;
     public GameData Data { get; private set; } = null;
-    public AudioManager AudioManager { get; private set; }
+    public AudioManager AudioManager;
 
     private void Awake()
     {
@@ -18,17 +19,27 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         LoadSave();
-        AudioManager = GetComponent<AudioManager>();
+        if (!TryGetComponent(out AudioManager))
+            AudioManager = this.AddComponent<AudioManager>();
         AudioManager.PlayBGMenu();
+    }
 
+    private void Update()
+    {
         GameObject[] buttonsList = GameObject.FindGameObjectsWithTag("Button");
         foreach (GameObject button in buttonsList)
         {
-            button.GetComponent<Button>().onClick.AddListener(delegate { AudioManager.PlayClick(); });
+            button.GetComponent<Button>().onClick.AddListener(delegate { AudioManager.PlayClick(); }); 
+            button.tag = "Untagged";
         }
     }
 
     private void OnApplicationQuit()
+    {
+        SaveData();
+    }
+
+    public void SaveData()
     {
         Data.Save("save.dat");
     }
@@ -59,7 +70,7 @@ public class GameManager : MonoBehaviour
     public void LoadSave()
     {
         Data = ObjectSaver.Load<GameData>("save.dat");
-        if (Data == null)
+        if (Data == null || Data.IsLosed)
         {
             NewGame();
         }

@@ -59,4 +59,11 @@ public class ButtonFunctions : MonoBehaviour
     {
         GameManager.Instance.LoadSave();
     }
+
+    public void ClickSound() => GameManager.Instance.AudioManager.PlayClick();
+
+    public void Save()
+    {
+        GameManager.Instance.SaveData();
+    }
 }
